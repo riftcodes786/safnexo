@@ -1,31 +1,11 @@
 import type { Metadata } from 'next'
-import React from 'react'
 import './globals.css'
 
 export const metadata: Metadata = {
-  title: {
-    default: 'Safenexo - Building the Future with AI & Design | Intelligent Digital Products',
-    template: '%s | Safenexo'
-  },
-  description: 'Safenexo is a next-gen studio crafting intelligent digital products with precision and creativity. We merge AI, automation, and human creativity to craft powerful digital systems that drive growth.',
-  keywords: [
-    'AI web development',
-    'mobile app experiences',
-    'chatbot automation systems',
-    'organic growth SEO',
-    'digital strategy consulting',
-    'intelligent digital products',
-    'AI-powered design',
-    'automation systems',
-    'conversational AI',
-    'cross-platform apps',
-    'digital transformation',
-    'smart websites',
-    'AI-driven UX',
-    'customer interactions',
-    'content strategies'
-  ],
-  authors: [{ name: 'Safenexo Team' }],
+  title: 'Safenexo - AI-Powered Digital Studio',
+  description: 'Safenexo is a next-gen studio crafting intelligent digital products with precision and creativity. We merge AI, automation, and human creativity to craft powerful digital systems.',
+  keywords: 'AI web development, mobile app development, chatbot automation, digital strategy, SEO, artificial intelligence, automation, digital transformation',
+  authors: [{ name: 'Muhammad Abdullah' }],
   creator: 'Safenexo',
   publisher: 'Safenexo',
   formatDetection: {
@@ -38,28 +18,27 @@ export const metadata: Metadata = {
     canonical: '/',
   },
   openGraph: {
-    type: 'website',
-    locale: 'en_US',
+    title: 'Safenexo - AI-Powered Digital Studio',
+    description: 'Building the future with AI & Design. Intelligent websites, mobile apps, chatbots, and digital strategies that adapt and evolve.',
     url: 'https://safenexo.com',
     siteName: 'Safenexo',
-    title: 'Safenexo - Building the Future with AI & Design | Intelligent Digital Products',
-    description: 'Safenexo is a next-gen studio crafting intelligent digital products with precision and creativity. We merge AI, automation, and human creativity to craft powerful digital systems.',
     images: [
       {
-        url: '/favicon_safenexo.png',
-        width: 512,
-        height: 512,
+        url: '/images/og-image.svg',
+        width: 1200,
+        height: 630,
         alt: 'Safenexo - AI-Powered Digital Studio',
       },
     ],
+    locale: 'en_US',
+    type: 'website',
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Safenexo - Building the Future with AI & Design | Intelligent Digital Products',
-    description: 'Safenexo is a next-gen studio crafting intelligent digital products with precision and creativity. We merge AI, automation, and human creativity to craft powerful digital systems.',
-    images: ['/favicon_safenexo.png'],
+    title: 'Safenexo - AI-Powered Digital Studio',
+    description: 'Building the future with AI & Design. Intelligent websites, mobile apps, chatbots, and digital strategies that adapt and evolve.',
+    images: ['/images/og-image.svg'],
     creator: '@safenexo',
-    site: '@safenexo',
   },
   robots: {
     index: true,
@@ -74,26 +53,8 @@ export const metadata: Metadata = {
   },
   verification: {
     google: 'your-google-verification-code',
-    yandex: 'your-yandex-verification-code',
-    yahoo: 'your-yahoo-verification-code',
   },
   category: 'technology',
-  classification: 'Digital Studio',
-  other: {
-    'theme-color': '#0A0A0A',
-    'color-scheme': 'dark',
-    'apple-mobile-web-app-capable': 'yes',
-    'apple-mobile-web-app-status-bar-style': 'black-translucent',
-    'apple-mobile-web-app-title': 'Safenexo',
-    'application-name': 'Safenexo',
-    'msapplication-TileColor': '#0A0A0A',
-    'msapplication-config': '/browserconfig.xml',
-  },
-  icons: {
-    icon: '/favicon_safenexo.png',
-    shortcut: '/favicon_safenexo.png',
-    apple: '/favicon_safenexo.png',
-  },
 }
 
 export default function RootLayout({
@@ -103,6 +64,52 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
+      <head>
+        <link rel="icon" href="/favicon_safenexo.png" type="image/png" />
+        <link rel="apple-touch-icon" href="/favicon_safenexo.png" />
+        <link rel="manifest" href="/manifest.json" />
+        <meta name="theme-color" content="#0A0A0A" />
+        <meta name="msapplication-TileColor" content="#0A0A0A" />
+        <meta name="msapplication-config" content="/browserconfig.xml" />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "Organization",
+              "name": "Safenexo",
+              "url": "https://safenexo.com",
+              "logo": "https://safenexo.com/favicon_safenexo.png",
+              "description": "AI-Powered Digital Studio crafting intelligent digital products with precision and creativity",
+              "foundingDate": "2024",
+              "founder": {
+                "@type": "Person",
+                "name": "Muhammad Abdullah",
+                "jobTitle": "Founder & CEO"
+              },
+              "address": {
+                "@type": "PostalAddress",
+                "addressCountry": "US"
+              },
+              "contactPoint": {
+                "@type": "ContactPoint",
+                "contactType": "customer service"
+              },
+              "sameAs": [
+                "https://twitter.com/safenexo",
+                "https://linkedin.com/company/safenexo"
+              ],
+              "serviceType": [
+                "AI Web Development",
+                "Mobile App Development", 
+                "Chatbot & Automation",
+                "Digital Strategy & Consulting",
+                "Organic Growth SEO"
+              ]
+            })
+          }}
+        />
+      </head>
       <body>{children}</body>
     </html>
   )

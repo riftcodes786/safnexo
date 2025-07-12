@@ -113,8 +113,8 @@ export default function SafenexoStudio() {
             "@type": "Organization",
             "name": "Safenexo",
             "url": "https://safenexo.com",
-            "logo": "https://safenexo.com/images/safenexo-logo.png",
-            "description": "Safenexo is a next-generation digital studio specializing in AI-powered web development, mobile app experiences, chatbot automation, and organic growth SEO.",
+            "logo": "https://safenexo.com/favicon_safenexo.png",
+            "description": "Safenexo is a next-gen studio crafting intelligent digital products with precision and creativity. We merge AI, automation, and human creativity to craft powerful digital systems.",
             "foundingDate": "2024",
             "address": {
               "@type": "PostalAddress",

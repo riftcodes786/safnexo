@@ -1,9 +1,9 @@
 "use client"
 
-import { Card, CardContent } from "@/components/ui/card"
 import Layout from "@/components/layout"
 import { Button } from "@/components/ui/button"
-import { ArrowRight, ArrowLeft, TrendingUp, Search, Globe, Target } from "lucide-react"
+import { Card, CardContent } from "@/components/ui/card"
+import { ArrowLeft, ArrowRight, Globe, Search, Target, TrendingUp } from "lucide-react"
 import Link from "next/link"
 
 export default function NexusMobileCaseStudy() {
@@ -233,7 +233,7 @@ export default function NexusMobileCaseStudy() {
                 className="relative flex items-center justify-between md:flex-row flex-col-reverse md:odd:flex-row-reverse w-full"
               >
                 <div className="w-full md:w-1/2 md:odd:pr-12 md:even:pl-12 text-center md:text-left">
-                  <h3 className="text-3xl font-bold mb-4">{item.title}</h3>
+                  <h3 className="text-3xl font-bold mb-4">{item.phase}</h3>
                   <p className="text-white/70 leading-relaxed">{item.description}</p>
                 </div>
                 <div className="flex-shrink-0 w-16 h-16 bg-gradient-to-r from-orange-500 to-red-500 rounded-full flex items-center justify-center text-white text-xl font-bold absolute left-1/2 -translate-x-1/2 top-1/2 -translate-y-1/2 md:static md:translate-x-0 md:translate-y-0">

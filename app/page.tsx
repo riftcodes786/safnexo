@@ -216,7 +216,7 @@ export default function SafenexoStudio() {
 
         {/* Mobile Menu Overlay */}
         {isMobileMenuOpen && (
-          <div className="md:hidden fixed inset-0 top-[72px] bg-[#0A0A0A] border-t border-white/10 z-30">
+          <div className="md:hidden fixed inset-0 top-[72px] bg-[#0A0A0A] border-t border-white/10 z-50 mobile-menu-overlay">
             <div className="flex flex-col p-8 space-y-6">
               <Link
                 href="/#about"

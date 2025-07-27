@@ -2,7 +2,7 @@
 
 import { Button } from "@/components/ui/button"
 import { Card, CardContent } from "@/components/ui/card"
-import { ArrowRight, ArrowUpRight, Menu, X } from "lucide-react"
+import { ArrowRight, ArrowUpRight } from "lucide-react"
 import Image from "next/image"
 import Link from "next/link"
 import { useEffect, useState } from "react"
@@ -10,7 +10,6 @@ import { useEffect, useState } from "react"
 export default function SafenexoStudio() {
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 })
   const [isHovering, setIsHovering] = useState(false)
-  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
 
   useEffect(() => {
     const handleMouseMove = (e: MouseEvent) => {
@@ -21,34 +20,6 @@ export default function SafenexoStudio() {
     window.addEventListener("mousemove", handleMouseMove, { passive: true })
     return () => window.removeEventListener("mousemove", handleMouseMove)
   }, [])
-
-  // Close mobile menu when clicking outside
-  useEffect(() => {
-    const handleClickOutside = () => {
-      setIsMobileMenuOpen(false)
-    }
-    
-    if (isMobileMenuOpen) {
-      document.addEventListener('click', handleClickOutside)
-      return () => document.removeEventListener('click', handleClickOutside)
-    }
-  }, [isMobileMenuOpen])
-
-  // Prevent body scroll when mobile menu is open
-  useEffect(() => {
-    if (isMobileMenuOpen) {
-      document.body.style.overflow = 'hidden'
-      document.body.classList.add('mobile-menu-open')
-    } else {
-      document.body.style.overflow = 'unset'
-      document.body.classList.remove('mobile-menu-open')
-    }
-    
-    return () => {
-      document.body.style.overflow = 'unset'
-      document.body.classList.remove('mobile-menu-open')
-    }
-  }, [isMobileMenuOpen])
 
   const services = [
     {
@@ -203,90 +174,8 @@ export default function SafenexoStudio() {
                 Contact
               </Link>
             </div>
-
-            {/* Mobile Menu Button */}
-            <button
-              className="md:hidden p-2 text-white/70 hover:text-white transition-colors"
-              onClick={(e) => {
-                e.stopPropagation()
-                setIsMobileMenuOpen(!isMobileMenuOpen)
-              }}
-            >
-              {isMobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
-            </button>
           </div>
         </div>
-
-        {/* Mobile Menu Overlay */}
-        {isMobileMenuOpen && (
-          <div className="md:hidden fixed inset-0 top-[72px] bg-[#0A0A0A] border-t border-white/10 z-[9999] mobile-menu-overlay" style={{zIndex: 9999}}>
-            <div className="flex flex-col p-8 space-y-6 relative z-10">
-              <Link
-                href="/#about"
-                className="text-2xl font-medium text-white hover:text-white/80 transition-colors py-4 border-b border-white/20 relative z-10"
-                onClick={() => setIsMobileMenuOpen(false)}
-              >
-                About
-              </Link>
-              
-              <div className="space-y-4 relative z-10">
-                <span className="text-2xl font-medium text-white py-4 border-b border-white/20 block relative z-10">Services</span>
-                <div className="pl-4 space-y-4 relative z-10">
-                  <Link
-                    href="/services/ai-web-development"
-                    className="block text-xl text-white/90 hover:text-white transition-colors relative z-10"
-                    onClick={() => setIsMobileMenuOpen(false)}
-                  >
-                    AI Web Development
-                  </Link>
-                  <Link
-                    href="/services/mobile-app-experiences"
-                    className="block text-xl text-white/90 hover:text-white transition-colors relative z-10"
-                    onClick={() => setIsMobileMenuOpen(false)}
-                  >
-                    Mobile App Experiences
-                  </Link>
-                  <Link
-                    href="/services/chatbot-automation"
-                    className="block text-xl text-white/90 hover:text-white transition-colors relative z-10"
-                    onClick={() => setIsMobileMenuOpen(false)}
-                  >
-                    Chatbot & Automation
-                  </Link>
-                  <Link
-                    href="/services/organic-growth-seo"
-                    className="block text-xl text-white/90 hover:text-white transition-colors relative z-10"
-                    onClick={() => setIsMobileMenuOpen(false)}
-                  >
-                    Organic Growth SEO
-                  </Link>
-                  <Link
-                    href="/services/digital-strategy"
-                    className="block text-xl text-white/90 hover:text-white transition-colors relative z-10"
-                    onClick={() => setIsMobileMenuOpen(false)}
-                  >
-                    Digital Strategy
-                  </Link>
-                </div>
-              </div>
-              
-              <Link
-                href="/#work"
-                className="text-2xl font-medium text-white hover:text-white/80 transition-colors py-4 border-b border-white/20 relative z-10"
-                onClick={() => setIsMobileMenuOpen(false)}
-              >
-                Work
-              </Link>
-              <Link
-                href="/#contact"
-                className="text-2xl font-medium text-white hover:text-white/80 transition-colors py-4 border-b border-white/20 relative z-10"
-                onClick={() => setIsMobileMenuOpen(false)}
-              >
-                Contact
-              </Link>
-            </div>
-          </div>
-        )}
       </nav>
 
       {/* Hero Section */}

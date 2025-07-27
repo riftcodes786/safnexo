@@ -38,12 +38,15 @@ export default function SafenexoStudio() {
   useEffect(() => {
     if (isMobileMenuOpen) {
       document.body.style.overflow = 'hidden'
+      document.body.classList.add('mobile-menu-open')
     } else {
       document.body.style.overflow = 'unset'
+      document.body.classList.remove('mobile-menu-open')
     }
     
     return () => {
       document.body.style.overflow = 'unset'
+      document.body.classList.remove('mobile-menu-open')
     }
   }, [isMobileMenuOpen])
 
@@ -216,50 +219,50 @@ export default function SafenexoStudio() {
 
         {/* Mobile Menu Overlay */}
         {isMobileMenuOpen && (
-          <div className="md:hidden fixed inset-0 top-[72px] bg-[#0A0A0A] border-t border-white/10 z-50 mobile-menu-overlay">
-            <div className="flex flex-col p-8 space-y-6">
+          <div className="md:hidden fixed inset-0 top-[72px] bg-[#0A0A0A] border-t border-white/10 z-[9999] mobile-menu-overlay" style={{zIndex: 9999}}>
+            <div className="flex flex-col p-8 space-y-6 relative z-10">
               <Link
                 href="/#about"
-                className="text-2xl font-medium text-white hover:text-white/80 transition-colors py-4 border-b border-white/20"
+                className="text-2xl font-medium text-white hover:text-white/80 transition-colors py-4 border-b border-white/20 relative z-10"
                 onClick={() => setIsMobileMenuOpen(false)}
               >
                 About
               </Link>
               
-              <div className="space-y-4">
-                <span className="text-2xl font-medium text-white py-4 border-b border-white/20 block">Services</span>
-                <div className="pl-4 space-y-4">
+              <div className="space-y-4 relative z-10">
+                <span className="text-2xl font-medium text-white py-4 border-b border-white/20 block relative z-10">Services</span>
+                <div className="pl-4 space-y-4 relative z-10">
                   <Link
                     href="/services/ai-web-development"
-                    className="block text-xl text-white/90 hover:text-white transition-colors"
+                    className="block text-xl text-white/90 hover:text-white transition-colors relative z-10"
                     onClick={() => setIsMobileMenuOpen(false)}
                   >
                     AI Web Development
                   </Link>
                   <Link
                     href="/services/mobile-app-experiences"
-                    className="block text-xl text-white/90 hover:text-white transition-colors"
+                    className="block text-xl text-white/90 hover:text-white transition-colors relative z-10"
                     onClick={() => setIsMobileMenuOpen(false)}
                   >
                     Mobile App Experiences
                   </Link>
                   <Link
                     href="/services/chatbot-automation"
-                    className="block text-xl text-white/90 hover:text-white transition-colors"
+                    className="block text-xl text-white/90 hover:text-white transition-colors relative z-10"
                     onClick={() => setIsMobileMenuOpen(false)}
                   >
                     Chatbot & Automation
                   </Link>
                   <Link
                     href="/services/organic-growth-seo"
-                    className="block text-xl text-white/90 hover:text-white transition-colors"
+                    className="block text-xl text-white/90 hover:text-white transition-colors relative z-10"
                     onClick={() => setIsMobileMenuOpen(false)}
                   >
                     Organic Growth SEO
                   </Link>
                   <Link
                     href="/services/digital-strategy"
-                    className="block text-xl text-white/90 hover:text-white transition-colors"
+                    className="block text-xl text-white/90 hover:text-white transition-colors relative z-10"
                     onClick={() => setIsMobileMenuOpen(false)}
                   >
                     Digital Strategy
@@ -269,14 +272,14 @@ export default function SafenexoStudio() {
               
               <Link
                 href="/#work"
-                className="text-2xl font-medium text-white hover:text-white/80 transition-colors py-4 border-b border-white/20"
+                className="text-2xl font-medium text-white hover:text-white/80 transition-colors py-4 border-b border-white/20 relative z-10"
                 onClick={() => setIsMobileMenuOpen(false)}
               >
                 Work
               </Link>
               <Link
                 href="/#contact"
-                className="text-2xl font-medium text-white hover:text-white/80 transition-colors py-4 border-b border-white/20"
+                className="text-2xl font-medium text-white hover:text-white/80 transition-colors py-4 border-b border-white/20 relative z-10"
                 onClick={() => setIsMobileMenuOpen(false)}
               >
                 Contact

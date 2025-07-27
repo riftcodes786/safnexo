@@ -1,0 +1,27 @@
+{
+  "name": "Safenexo - AI-Powered Digital Studio",
+  "short_name": "Safenexo",
+  "description": "Building the future with AI & Design. Intelligent websites, mobile apps, chatbots, and digital strategies that adapt and evolve.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#0A0A0A",
+  "theme_color": "#0A0A0A",
+  "orientation": "portrait-primary",
+  "icons": [
+    {
+      "src": "/favicon_safenexo.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/favicon_safenexo.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ],
+  "categories": ["business", "productivity", "technology"],
+  "lang": "en",
+  "dir": "ltr"
+} 
